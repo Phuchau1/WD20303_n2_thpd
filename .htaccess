@@ -1,0 +1,11 @@
+# Simple rewrite rules for Quanan project
+RewriteEngine On
+RewriteBase /webdogiadung/
+
+# Serve existing files directly
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# All other requests to index.php
+RewriteRule ^ index.php [L,QSA]
